@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration Form</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Main container centers the card on the page -->
+  <main class="page">
+    <section class="card" aria-labelledby="form-title">
+      <header class="card-header">
+        <h1 id="form-title">Student Registration</h1>
+        <p class="subtitle">Please fill in the details below to register.</p>
+      </header>
+
+      <!-- Registration form: novalidate disables native validation so JS handles it -->
+      <form id="registrationForm" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName"
+                 placeholder="e.g., John Michael" required />
+          <small class="error" id="fullNameError"></small>
+        </div>
+
+        <!-- Roll Number -->
+        <div class="form-group">
+          <label for="rollNumber">Roll Number</label>
+          <input type="text" id="rollNumber" name="rollNumber"
+                 placeholder="e.g., A24126511000" required />
+          <small class="error" id="rollNumberError"></small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email ID</label>
+          <input type="email" id="email" name="email"
+                 placeholder="e.g., john@example.com" required />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <!-- Mobile -->
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile"
+                 placeholder="10-digit mobile number" maxlength="10" required />
+          <small class="error" id="mobileError"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password"
+                 placeholder="Minimum 8 characters" required />
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword"
+                 placeholder="Re-enter your password" required />
+          <small class="error" id="confirmPasswordError"></small>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+          <span class="label">Gender</span>
+          <div class="radio-group" role="radiogroup" aria-label="Gender">
+            <label><input type="radio" name="gender" value="Male" /> Male</label>
+            <label><input type="radio" name="gender" value="Female" /> Female</label>
+            <label><input type="radio" name="gender" value="Other" /> Other</label>
+          </div>
+          <small class="error" id="genderError"></small>
+        </div>
+
+        <!-- Department -->
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" name="department" required>
+            <option value="">Select Department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Electrical">Electrical</option>
+          </select>
+          <small class="error" id="departmentError"></small>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
+          <small class="error" id="dobError"></small>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-row">
+          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="reset" class="btn btn-secondary" id="resetBtn">Reset</button>
+        </div>
+
+        <!-- Success banner -->
+        <p class="success" id="successMessage" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
